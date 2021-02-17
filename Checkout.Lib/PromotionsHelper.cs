@@ -24,7 +24,13 @@ namespace Checkout.Lib
                     }
 
                 case 'D' when items.Count >= 2:
-                    return 0;
+                    {
+                        var amountOfDiscounts = items.Count / 2;
+                        var promotionApplied = (items[0].UnitPrice * 2) * 0.75;
+                        var itemsNotNeedingDiscount = items.Count % 2;
+
+                        return (itemsNotNeedingDiscount * items[0].UnitPrice) + (promotionApplied * amountOfDiscounts);
+                    }
             }
 
             return items.Sum(item => item.UnitPrice);

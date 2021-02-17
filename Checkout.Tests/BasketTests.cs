@@ -60,5 +60,24 @@ namespace Checkout.Tests
             // Assert
             Assert.AreEqual(expectedTotalCost, basket.TotalCost);
         }
+
+
+        [DataTestMethod]
+        [DataRow(1, 55)]
+        [DataRow(2, 82.5)]
+        public void Given_IHaveAddedAMultipleOfTwoLotsOfItemDToTheBasketThenAPromotionOfTwentyFivePercentOffShouldBeAppliedToEveryMultipleOfTwo(int numberOfItems, double expectedTotalCost)
+        {
+            // Arrange
+            var basket = new Basket();
+
+            // Act
+            for (int i = 0; i < numberOfItems; i++)
+            {
+                basket.AddItem(new Item(sku: 'D', unitPrice: 55));
+            }
+
+            // Assert
+            Assert.AreEqual(expectedTotalCost, basket.TotalCost);
+        }
     }
 }

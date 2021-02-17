@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Checkout.Lib
 {
-    interface IItem
+    public interface IItem
     {
         char SKU { get; }
         double UnitPrice { get; }

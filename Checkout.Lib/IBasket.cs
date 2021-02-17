@@ -4,9 +4,9 @@ using System.Text;
 
 namespace Checkout.Lib
 {
-    interface IBasket
+    public interface IBasket
     {
-        public void AddItem(Item item);
+        public void AddItem(IItem item);
         double TotalCost { get; }
     }
 }

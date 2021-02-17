@@ -7,7 +7,7 @@ namespace Checkout.Lib
 {
     public static class PromotionsHelper
     {
-        public static double CalculateCost(List<Item> items)
+        public static double CalculateCost(List<IItem> items)
         {
             if (items.Count == 0) return 0;
 

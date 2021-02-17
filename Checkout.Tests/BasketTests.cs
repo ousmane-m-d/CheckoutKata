@@ -44,6 +44,9 @@ namespace Checkout.Tests
         [DataRow(1, 15)]
         [DataRow(2, 30)]
         [DataRow(3, 40)]
+        [DataRow(4, 55)]
+        [DataRow(5, 70)]
+        [DataRow(6, 80)]
         public void Given_IHaveAddedAMultipleOfThreeLotsOfItemBToTheBasketThenAPromotionOfThreeForFourthyShouldBeAppliedToEveryMultipleOfThree(int numberOfItems, double expectedTotalCost)
         {
             // Arrange

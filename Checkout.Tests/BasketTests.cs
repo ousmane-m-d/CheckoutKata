@@ -65,6 +65,10 @@ namespace Checkout.Tests
         [DataTestMethod]
         [DataRow(1, 55)]
         [DataRow(2, 82.5)]
+        [DataRow(3, 137.5)]
+        [DataRow(4, 165)]
+        [DataRow(5, 220)]
+        [DataRow(6, 247.5)]
         public void Given_IHaveAddedAMultipleOfTwoLotsOfItemDToTheBasketThenAPromotionOfTwentyFivePercentOffShouldBeAppliedToEveryMultipleOfTwo(int numberOfItems, double expectedTotalCost)
         {
             // Arrange

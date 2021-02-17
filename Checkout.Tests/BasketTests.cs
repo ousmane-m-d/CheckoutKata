@@ -1,11 +1,24 @@
 using Checkout.Lib;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 
 namespace Checkout.Tests
 {
     [TestClass]
     public class BasketTests
     {
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void Given_IAttemptToAddNullToTheBasket_Then_ArgumentNullExceptionIsThrown()
+        {
+            // Arrange
+            var basket = new Basket();
+            Item item = null;
+
+            // Act
+            basket.AddItem(item);
+        }
+
         [TestMethod]
         public void Given_IHaveSelectedToAddAnItemToTheBasket_ThenTheItemShouldBeAddedToTheBasket()
         {

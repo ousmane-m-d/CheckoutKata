@@ -19,21 +19,21 @@ namespace Checkout.Lib
             {
                 case 'B' when items.Count >= 3:
                     {
-                        var amountOfDiscounts = items.Count / 3;
-                        var amountAfterDiscount = amountOfDiscounts * 40;
+                        var numberOfDiscounts = items.Count / 3;
+                        var amountAfterDiscount = numberOfDiscounts * 40;
 
-                        var itemsNotNeedingDiscount = items.Count % 3;
+                        var numberOfItemsNotNeedingDiscount = items.Count % 3;
 
-                        return itemsNotNeedingDiscount * items[0].UnitPrice + amountAfterDiscount;
+                        return numberOfItemsNotNeedingDiscount * items[0].UnitPrice + amountAfterDiscount;
                     }
 
                 case 'D' when items.Count >= 2:
                     {
-                        var amountOfDiscounts = items.Count / 2;
+                        var numberOfDiscounts = items.Count / 2;
                         var promotionApplied = (items[0].UnitPrice * 2) * 0.75;
-                        var itemsNotNeedingDiscount = items.Count % 2;
+                        var numberOfItemsNotNeedingDiscount = items.Count % 2;
 
-                        return (itemsNotNeedingDiscount * items[0].UnitPrice) + (promotionApplied * amountOfDiscounts);
+                        return (numberOfItemsNotNeedingDiscount * items[0].UnitPrice) + (promotionApplied * numberOfDiscounts);
                     }
             }
 

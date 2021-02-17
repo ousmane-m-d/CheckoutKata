@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Checkout.Lib
 {
@@ -18,5 +19,7 @@ namespace Checkout.Lib
         }
 
         public int ItemsCount => _items.Count;
+
+        public double TotalCost => _items.Sum(item => item.UnitPrice);
     }
 }

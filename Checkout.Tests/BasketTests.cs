@@ -11,7 +11,7 @@ namespace Checkout.Tests
         {
             // Arrange
             var basket = new Basket();
-            var item = new Item();
+            var item = new Item(sku: 'A', unitPrice: 10);
 
             // Act
             basket.AddItem(item);
@@ -25,7 +25,7 @@ namespace Checkout.Tests
         {
             // Arrange
             var basket = new Basket();
-            var itemA = new Item('A', 10);
+            var itemA = new Item(sku: 'A', unitPrice: 10);
             var itemB = new Item('B', 15);
             var itemC = new Item('C', 40);
             var itemD = new Item('D', 55);

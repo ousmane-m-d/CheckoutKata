@@ -9,7 +9,13 @@ namespace Checkout.Lib
 
         public Item(char sku, double unitPrice)
         {
+            if (unitPrice <= 0)
+            {
+                throw new ArgumentException(message: "item price cannot be than or equal to 0", paramName: nameof(unitPrice));
+            }
+
             SKU = sku;
+
             UnitPrice = unitPrice;
         }
     }

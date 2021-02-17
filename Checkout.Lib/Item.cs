@@ -2,7 +2,7 @@
 
 namespace Checkout.Lib
 {
-    public class Item
+    public class Item : IItem
     {
 
     }

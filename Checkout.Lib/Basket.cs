@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Checkout.Lib
 {
-    public class Basket
+    public class Basket : IBasket
     {
         private readonly List<Item> _items;
 

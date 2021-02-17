@@ -13,7 +13,7 @@ namespace Checkout.Lib
 
             switch (items[0].SKU)
             {
-                case 'B':
+                case 'B' when items.Count >= 3:
                     {
                         var amountOfDiscounts = items.Count / 3;
                         var amountAfterDiscount = amountOfDiscounts * 40;
@@ -23,7 +23,7 @@ namespace Checkout.Lib
                         return itemsNotNeedingDiscount * items[0].UnitPrice + amountAfterDiscount;
                     }
 
-                case 'D':
+                case 'D' when items.Count >= 2:
                     return 0;
             }
 

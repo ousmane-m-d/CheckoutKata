@@ -6,20 +6,22 @@ namespace Checkout.Lib
 {
     public class Basket : IBasket
     {
-        private readonly List<Item> _items;
+        private readonly Dictionary<char, List<Item>> _skuToItems;
 
-        public Basket()
-        {
-            _items = new List<Item>();
-        }
+        public Basket() => _skuToItems = new Dictionary<char, List<Item>>();
 
         public void AddItem(Item item)
         {
-            _items.Add(item);
+            if (!_skuToItems.ContainsKey(item.SKU))
+            {
+                _skuToItems[item.SKU] = new List<Item>();
+            }
+
+            _skuToItems[item.SKU].Add(item);
         }
 
-        public int ItemsCount => _items.Count;
+        public double TotalCost => _skuToItems.Values.Sum(items => PromotionsHelper.CalculateCost(items));
 
-        public double TotalCost => _items.Sum(item => item.UnitPrice);
+        public int ItemsCount => _skuToItems.Values.Sum(items => items.Count);
     }
 }

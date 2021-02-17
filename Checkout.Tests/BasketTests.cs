@@ -1,3 +1,4 @@
+using Checkout.Lib;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Checkout.Tests

@@ -2,7 +2,8 @@
 
 namespace Checkout.Lib
 {
-    public class Class1
+    public class Item
     {
+
     }
 }

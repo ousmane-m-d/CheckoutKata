@@ -12,6 +12,11 @@ namespace Checkout.Lib
 
         public void AddItem(IItem item)
         {
+            if (item == null)
+            {
+                throw new ArgumentNullException(paramName: nameof(item));
+            }
+
             if (!_skuToItems.ContainsKey(item.SKU))
             {
                 _skuToItems[item.SKU] = new List<IItem>();

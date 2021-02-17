@@ -3,10 +3,7 @@
 namespace Checkout.Lib
 {
     public class Item : IItem
-    {
-        public char SKU { get; }
-        public double UnitPrice { get; }
-
+    {    
         public Item(char sku, double unitPrice)
         {
             if (unitPrice <= 0)
@@ -18,5 +15,8 @@ namespace Checkout.Lib
 
             UnitPrice = unitPrice;
         }
+
+        public char SKU { get; }
+        public double UnitPrice { get; }
     }
 }

@@ -1,10 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace Checkout.Lib
 {
+    /*
+     * Due to the time constraints of this Task i.e. it being done between 1-2 hours I did not manage to refactor this logic.
+     * If I had more time I would probably have deleted this file and instead created a IPromotion interface with a Promotion 
+     * class implementing that and then this would be used in Item instances to dictate whether a promotion should be 
+     * applied or not.
+     */
     public static class PromotionsHelper
     {
         public static double CalculateCost(List<IItem> items)

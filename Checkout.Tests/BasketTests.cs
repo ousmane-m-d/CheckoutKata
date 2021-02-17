@@ -60,7 +60,7 @@ namespace Checkout.Tests
         [DataRow(4, 55)]
         [DataRow(5, 70)]
         [DataRow(6, 80)]
-        public void Given_IHaveAddedAMultipleOfThreeLotsOfItemBToTheBasketThenAPromotionOfThreeForFourthyShouldBeAppliedToEveryMultipleOfThree(int numberOfItems, double expectedTotalCost)
+        public void Given_IHaveAddedAMultipleOfThreeLotsOfItemBToTheBasketThenAPromotionOfThreeForFourtyShouldBeAppliedToEveryMultipleOfThree(int numberOfItems, double expectedTotalCost)
         {
             // Arrange
             var basket = new Basket();

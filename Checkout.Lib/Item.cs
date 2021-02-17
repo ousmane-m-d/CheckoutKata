@@ -8,7 +8,7 @@ namespace Checkout.Lib
         {
             if (unitPrice <= 0)
             {
-                throw new ArgumentException(message: "item price cannot be than or equal to 0", paramName: nameof(unitPrice));
+                throw new ArgumentException(message: "item price cannot be less than or equal to 0", paramName: nameof(unitPrice));
             }
 
             SKU = sku;
@@ -17,6 +17,7 @@ namespace Checkout.Lib
         }
 
         public char SKU { get; }
+
         public double UnitPrice { get; }
     }
 }

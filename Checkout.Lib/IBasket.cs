@@ -7,5 +7,6 @@ namespace Checkout.Lib
     interface IBasket
     {
         public void AddItem(Item item);
+        double TotalCost { get; }
     }
 }

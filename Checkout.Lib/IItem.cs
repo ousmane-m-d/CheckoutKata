@@ -6,6 +6,7 @@ namespace Checkout.Lib
 {
     interface IItem
     {
-
+        char SKU { get; }
+        double UnitPrice { get; }
     }
 }
